@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Windows.Forms;
 using SharpPcap;
-using PacketDotNet;
 using System.IO;
 using System.Text;
 

@@ -1,12 +1,10 @@
 ﻿using System;
 using System.Windows.Forms;
 using System.Net;
-using System.Data;
 using SharpPcap;
 using PacketDotNet;
 using System.Text;
 using System.Collections.Generic;
-using System.Net.NetworkInformation;
 using System.Threading;
 using System.Timers;
 using System.Drawing;
@@ -77,7 +75,6 @@ namespace Sniffer_v3
                 button12.Visible = false;
                 button1.FlatAppearance.BorderColor = Color.Red;
                 catched = 0;
-                //dataGridView1.Rows.Add(buf_size);
                 start = true;
                 // выбор устройств для прослушки        
                 device = list[comboBox1.SelectedIndex];
@@ -107,10 +104,6 @@ namespace Sniffer_v3
             device = list[comboBox1.SelectedIndex];
             device.OnPacketArrival += new PacketArrivalEventHandler(capture_event6);
             device.Open(DeviceMode.Promiscuous);
-            t = new System.Timers.Timer(check * 1000);
-            t.Elapsed += OnTimedEvent;
-            t.Enabled = true;
-            t.Start();
             device.StartCapture();
         }
 
@@ -345,7 +338,7 @@ namespace Sniffer_v3
                 string source = ip.SourceAddress.ToString();
                 string destinition = ip.DestinationAddress.ToString();
                 var protocol = ip.Protocol;
-                string data = p.GetData(offset);
+                string data = p.PrintHex(enc);
                 object[] row = new object[] { time, length, source, destinition, protocol, data };
                 dataGridView1.Rows.Add(row);
                 if (destinition == this.ip.ToString())
@@ -467,6 +460,11 @@ namespace Sniffer_v3
             int VisibleTime = 1000;
             Button TB = (Button)sender;
             ToolTip1.Show("Удалить текст", TB, 30, 0, VisibleTime);
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 

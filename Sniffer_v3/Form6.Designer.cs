@@ -40,7 +40,7 @@
             this.chart1.ChartAreas.Add(chartArea1);
             legend1.Name = "Legend1";
             this.chart1.Legends.Add(legend1);
-            this.chart1.Location = new System.Drawing.Point(12, 114);
+            this.chart1.Location = new System.Drawing.Point(15, 12);
             this.chart1.Name = "chart1";
             this.chart1.Size = new System.Drawing.Size(1418, 431);
             this.chart1.TabIndex = 0;
@@ -50,7 +50,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1445, 557);
+            this.ClientSize = new System.Drawing.Size(1445, 454);
             this.Controls.Add(this.chart1);
             this.Name = "Form6";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

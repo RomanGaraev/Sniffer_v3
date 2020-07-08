@@ -1,11 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Windows.Forms.DataVisualization.Charting;
 namespace Sniffer_v3
@@ -17,6 +11,7 @@ namespace Sniffer_v3
     public Form6(DataGridView dgw)
         {
             InitializeComponent();
+            chart1.ChartAreas[0].AxisY.Title = "Num of packets";
             // Добавляем пакеты в словарь
             for (int i = 0; i < dgw.RowCount; i++)
             {
