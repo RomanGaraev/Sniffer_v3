@@ -1,1 +1,1 @@
-[Many thanks to Chris Morgan](https://github.com/chmorgan)
+Many thanks to [Chris Morgan](https://github.com/chmorgan)
